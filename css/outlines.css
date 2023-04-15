@@ -132,10 +132,3 @@ aside::before {
 nav::before {
   content: "nav";
 }
-
-.main-logo {
-  background-image: url(/static/main-logo.svg);
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-}
