@@ -120,23 +120,23 @@ footer {
 }
 
 .social-link_github {
-    background-image: url("/img/social/github.svg");
+    background-image: url("TI-2/img/social/github.svg");
 }
 
 .social-link_gitlab {
-    background-image: url("/img/social/gitlab.svg");
+    background-image: url("TI-2/img/social/gitlab.svg");
 }
 
 .social-link_instagram {
-    background-image: url("/img/social/instagram.svg");
+    background-image: url("TI-2/img/social/instagram.svg");
 }
 
 .social-link_telegram {
-    background-image: url("/img/social/telegram.svg");
+    background-image: url("TI-2/img/social/telegram.svg");
 }
 
 .social-link_vk {
-    background-image: url("/img/social/vk.svg");
+    background-image: url("TI-2/img/social/vk.svg");
 }
 
 .visually-hidden {
@@ -165,11 +165,11 @@ footer {
 }
 
 .contact-link_phone {
-    background-image: url("/img/contacts/phone.svg");
+    background-image: url("TI-2/img/contacts/phone.svg");
 }
 
 .contact-link_mail {
-    background-image: url("/img/contacts/email.svg");
+    background-image: url("TI-2/img/contacts/email.svg");
 }
 
 .main-photo {
@@ -214,20 +214,20 @@ footer {
 
 
 .skill-item_html {
-    background-image: url("/img/skills/html.svg");
+    background-image: url("TI-2/img/skills/html.svg");
 }
 
 
 .skill-item_css {
-    background-image: url("/img/skills/css.svg");
+    background-image: url("TI-2/img/skills/css.svg");
 }
 
 
 .skill-item_cpp {
-    background-image: url("/img/skills/c++.svg");
+    background-image: url("TI-2/img/skills/c++.svg");
 }
 
 
 .skill-item_python {
-    background-image: url("/img/skills/python.svg");
+    background-image: url("TI-2/img/skills/python.svg");
 }
