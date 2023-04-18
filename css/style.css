@@ -1,0 +1,233 @@
+:root {
+    --black: #212121;
+    --green: #09A494;
+    --white: #fff;
+    --main-transition: .5s;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, button, a {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--black);
+}
+
+body {
+    line-height: 150%;
+}
+
+h1, h2 {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--black);
+}
+
+h1 {
+    font-size: 60px;
+    line-height: 110%;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 120%;
+}
+
+button, a {
+    line-height: 100%;
+    cursor: pointer;
+}
+
+button {
+    text-transform: lowercase;
+    padding: 6px 10px 10px;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    color: var(--green);
+    background-color: var(--white);
+    transition: color, background-color var(--main-transition);
+}
+
+button:hover {
+    color: var(--white);
+    background-color: var(--green);
+}
+
+footer {
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.subtitle {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 120%;
+    color: var(--green);
+}
+
+.container {
+    min-width: 320px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-nav a {
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--black);
+    transition: color var(--main-transition);
+}
+
+.main-nav a:hover {
+    color: var(--green);
+}
+
+.social, .contact {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.social li, .contact li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.social-link {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--green);
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: background-color var(--main-transition);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.social-link:hover {
+    background-color: var(--green);
+}
+
+.social-link_github {
+    background-image: url("/img/social/github.svg");
+}
+
+.social-link_gitlab {
+    background-image: url("/img/social/gitlab.svg");
+}
+
+.social-link_instagram {
+    background-image: url("/img/social/instagram.svg");
+}
+
+.social-link_telegram {
+    background-image: url("/img/social/telegram.svg");
+}
+
+.social-link_vk {
+    background-image: url("/img/social/vk.svg");
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.contact-link {
+    display: block;
+    padding: 5px 0 5px 42px;
+    transition: color var(--main-transition);
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.contact-link:hover {
+    color: var(--green);
+}
+
+.contact-link_phone {
+    background-image: url("/img/contacts/phone.svg");
+}
+
+.contact-link_mail {
+    background-image: url("/img/contacts/email.svg");
+}
+
+.main-photo {
+    border-radius: 50%;
+}
+
+.skill-list {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+
+.skill-list dt {
+    margin-bottom: 6px;
+    padding: 5px 0 5px 38px;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 30px;
+}
+
+
+.skill-level {
+    margin: 4px 0 16px;
+    padding: 2px;
+    font-size: 0;
+    border: 1px solid var(--black);
+    border-radius: 16px;
+}
+
+
+.skill-level div {
+    height: 14px;
+    background-color: var(--green);
+    border-radius: 8px;
+}
+
+
+.skill-item {
+    text-transform: lowercase;
+}
+
+
+.skill-item_html {
+    background-image: url("/img/skills/html.svg");
+}
+
+
+.skill-item_css {
+    background-image: url("/img/skills/css.svg");
+}
+
+
+.skill-item_cpp {
+    background-image: url("/img/skills/c++.svg");
+}
+
+
+.skill-item_python {
+    background-image: url("/img/skills/python.svg");
+}
