@@ -5,11 +5,15 @@
     --main-transition: .5s;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
-body, button, a {
+body,
+button,
+a {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -21,7 +25,8 @@ body {
     line-height: 150%;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -38,7 +43,8 @@ h2 {
     line-height: 120%;
 }
 
-button, a {
+a,
+button {
     line-height: 100%;
     cursor: pointer;
 }
@@ -49,7 +55,7 @@ button {
     border: 1px solid var(--green);
     border-radius: 8px;
     color: var(--green);
-    background-color: var(--white);
+    background-color: transparent;
     transition: color, background-color var(--main-transition);
 }
 
@@ -91,13 +97,15 @@ footer {
     color: var(--green);
 }
 
-.social, .contact {
+.social,
+.contact {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.social li, .contact li {
+.social li,
+.contact li {
     margin: 0;
     padding: 0;
     display: inline-block;
@@ -158,6 +166,7 @@ footer {
     transition: color var(--main-transition);
     background-position: left;
     background-repeat: no-repeat;
+    text-decoration: none;
 }
 
 .contact-link:hover {
