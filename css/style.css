@@ -220,7 +220,7 @@ footer {
 }
 
 .skill-level {
-    margin: 4px 0 16px;
+    margin: 4px 0 18px;
     padding: 2px;
     font-size: 0;
     border: 1px solid var(--black);
@@ -296,6 +296,7 @@ p:last-child {
 
 .skills__header {
     display: flex;
+    gap: 40px;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 40px;
