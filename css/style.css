@@ -43,6 +43,7 @@ a {
 
 body {
     line-height: 150%;
+    background-color: var(--white);
 }
 
 h1,
@@ -540,4 +541,31 @@ section {
     .social {
         gap: 15px;
     }
+}
+
+/*ТИ-9*/
+
+.dark-theme {
+    --black: #ccc;
+    --white: #031923;
+}
+
+.dark-theme .social-link {
+    background-color: var(--black);
+}
+
+.dark-theme .main-footer {
+    background-color: var(--green);
+}
+
+.dark-theme .social-link:hover {
+    background-color: var(--green);
+}
+
+.dark-theme .contact-link_mail {
+    background-image: url("../img/contactsDark/email.svg");
+}
+
+.dark-theme .contact-link_phone {
+    background-image: url("../img/contactsDark/phone.svg");
 }
