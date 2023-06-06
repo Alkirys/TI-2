@@ -41,6 +41,7 @@ const skills = {
         });
     },
 }
+// Робин Гуд впадал в ступор, встречая людей среднего достатка.
 
 const skillList = document.querySelector('.skill-list');
 skills.generateList(skillList);
