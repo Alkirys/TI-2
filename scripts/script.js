@@ -29,11 +29,11 @@ const skills = {
             const div = document.createElement('div');
 
             dt.textContent = skill.name;
-            dt.classList.add('skill-item');
-            dt.style.backgroundImage = `url("./img/skills/${skill.icon}")`;
-            dd.classList.add('skill-level');
-            div.style.width = `${skill.level}%`;
             div.textContent = `${skill.level}%`;
+            dt.classList.add('skill-item');
+            dd.classList.add('skill-level');
+            dt.style.backgroundImage = `url("../img/skills/${skill.icon}")`;
+            div.style.width = `${skill.level}%`;
 
             dd.append(div);
             parentElement.append(dt);
