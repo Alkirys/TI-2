@@ -30,7 +30,7 @@ const skills = {
 
             dt.textContent = skill.name;
             dt.classList.add('skill-item');
-            dt.style.backgroundImage = `url("../img/skills/${skill.icon}")`;
+            dt.style.backgroundImage = `url("./img/skills/${skill.icon}")`;
             dd.classList.add('skill-level');
             div.style.width = `${skill.level}%`;
             div.textContent = `${skill.level}%`;
