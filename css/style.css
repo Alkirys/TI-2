@@ -238,22 +238,6 @@ footer {
     text-transform: lowercase;
 }
 
-.skill-item_html {
-    background-image: url("../img/skills/html.svg");
-}
-
-.skill-item_css {
-    background-image: url("../img/skills/css.svg");
-}
-
-.skill-item_cpp {
-    background-image: url("../img/skills/c++.svg");
-}
-
-.skill-item_python {
-    background-image: url("../img/skills/python.svg");
-}
-
 /*ТИ-6 часть 1*/
 
 .main-header {
