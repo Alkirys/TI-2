@@ -36,8 +36,7 @@ const skills = {
             div.style.width = `${skill.level}%`;
 
             dd.append(div);
-            parentElement.append(dt);
-            parentElement.append(dd);
+            parentElement.append(dt, dd);
         });
     },
 }
