@@ -1,23 +1,38 @@
+const getComparer = (prop) => {
+    return (a, b) => {
+        if (a[prop] < b[prop]) {
+            return -1;
+        }
+
+        if (a[prop] > b[prop]) {
+            return 1;
+        }
+
+        return 0;
+    }
+};
+
 const skills = {
+    inSort: false,
     data: [
         {
             name: 'html',
-            level: 50,
+            level: 80,
             icon: 'html.svg',
         },
         {
             name: 'css',
-            level: 50,
+            level: 70,
             icon: 'css.svg',
         },
         {
             name: 'python',
-            level: 50,
+            level: 10,
             icon: 'python.svg',
         },
         {
             name: 'c++',
-            level: 50,
+            level: 20,
             icon: 'c++.svg',
         },
     ],
@@ -39,8 +54,37 @@ const skills = {
             parentElement.append(dt, dd);
         });
     },
+
+    sortByProp: function (parentElement, propName) {
+        parentElement.innerHTML = '';
+        if (!this.inSort || this.inSort !== propName) {
+            console.log(`sort by ${propName}`);
+            this.data.sort(getComparer(propName));
+            this.inSort = propName;
+        } else {
+            this.data.reverse();
+            console.log(`reverse`);
+        }
+        this.generateList(parentElement);
+    },
 }
 // Робин Гуд впадал в ступор, встречая людей среднего достатка.
 
 const skillList = document.querySelector('.skill-list');
 skills.generateList(skillList);
+
+// TI-10
+
+const buttonGroup = document.querySelector('.skills__buttonGroup');
+buttonGroup.addEventListener('click', (evt) => {
+    if (evt.target.nodeName === 'BUTTON') {
+        switch (evt.target.dataset.type) {
+            case 'name':
+                skills.sortByProp(skillList, 'name');
+                break;
+            case 'level':
+                skills.sortByProp(skillList, 'level');
+                break;
+        }
+    }
+});
