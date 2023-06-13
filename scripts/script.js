@@ -92,14 +92,7 @@ menu.toggleMenu(nav, burgerButton);
 
 buttonGroup.addEventListener('click', (evt) => {
     if (evt.target.nodeName === 'BUTTON') {
-        switch (evt.target.dataset.type) {
-            case 'name':
-                skills.sortByProp(skillList, 'name');
-                break;
-            case 'level':
-                skills.sortByProp(skillList, 'level');
-                break;
-        }
+        skills.sortByProp(skillList, evt.target.dataset.type);
     }
 });
 
