@@ -86,17 +86,44 @@ const skillList = document.querySelector('.skill-list');
 const buttonGroup = document.querySelector('.skills__buttonGroup');
 const burgerButton = document.querySelector('.nav-btn');
 const nav = document.querySelector('.main-nav');
+const themeCheckbox = document.querySelector('.switch-checkbox');
+const body = document.querySelector('body');
 
 skills.generateList(skillList);
 menu.toggleMenu(nav, burgerButton);
 
-buttonGroup.addEventListener('click', (evt) => {
-    if (evt.target.nodeName === 'BUTTON') {
-        skills.sortByProp(skillList, evt.target.dataset.type);
+buttonGroup.addEventListener(
+    'click',
+    (evt) => evt.target.nodeName === 'BUTTON' && skills.sortByProp(skillList, evt.target.dataset.type)
+);
+
+burgerButton.addEventListener('click', () => menu.toggleMenu(nav, burgerButton));
+// Первый закон зомби-апокалипсиса: будь человеком и к тебе потянутся
+
+
+const localStorage = window.localStorage;
+let theme = localStorage.getItem('theme');
+const themeStateEnum = {
+    dark: 'dark',
+    light: 'light',
+}
+
+themeCheckbox.addEventListener('change', () => {
+    if (theme === themeStateEnum.dark) {
+        theme = themeStateEnum.light;
+    } else {
+        theme = themeStateEnum.dark;
     }
+    localStorage.setItem('theme', theme);
+    body.classList.toggle('dark-theme');
 });
 
-burgerButton.addEventListener('click', () => {
-    menu.toggleMenu(nav, burgerButton);
-});
-// Первый закон зомби-апокалипсиса: будь человеком и к тебе потянутся
+if (!theme) {
+    localStorage.setItem('theme', themeStateEnum.dark);
+    theme = themeStateEnum.dark;
+} else if (theme !== themeStateEnum.dark) {
+    console.log(theme)
+    body.classList.remove('dark-theme');
+    themeCheckbox.checked = !themeCheckbox.checked;
+}
+// Ложь неприятнее всего, когда она глагол.
