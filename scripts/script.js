@@ -68,14 +68,28 @@ const skills = {
         this.generateList(parentElement);
     },
 }
+
+const menu = {
+    isOpen: true,
+
+    toggleMenu: function(menuElement, button) {
+        menuElement.classList.toggle('main-nav__closed');
+        button.classList.toggle('nav-btn__close');
+        button.classList.toggle('nav-btn__open');
+        button.children[0].innerText = this.isOpen ? 'Открыть меню' : 'Закрыть меню';
+        this.isOpen = !this.isOpen;
+    },
+}
 // Робин Гуд впадал в ступор, встречая людей среднего достатка.
 
 const skillList = document.querySelector('.skill-list');
-skills.generateList(skillList);
-
-// TI-10
-
 const buttonGroup = document.querySelector('.skills__buttonGroup');
+const burgerButton = document.querySelector('.nav-btn');
+const nav = document.querySelector('.main-nav');
+
+skills.generateList(skillList);
+menu.toggleMenu(nav, burgerButton);
+
 buttonGroup.addEventListener('click', (evt) => {
     if (evt.target.nodeName === 'BUTTON') {
         switch (evt.target.dataset.type) {
@@ -88,3 +102,8 @@ buttonGroup.addEventListener('click', (evt) => {
         }
     }
 });
+
+burgerButton.addEventListener('click', () => {
+    menu.toggleMenu(nav, burgerButton);
+});
+// Первый закон зомби-апокалипсиса: будь человеком и к тебе потянутся

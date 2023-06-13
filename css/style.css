@@ -502,6 +502,10 @@ section {
     .skill-level {
         margin: 4px 0 24px;
     }
+
+    .main-nav__closed {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 550px) {
