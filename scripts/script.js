@@ -87,7 +87,6 @@ const buttonGroup = document.querySelector('.skills__buttonGroup');
 const burgerButton = document.querySelector('.nav-btn');
 const nav = document.querySelector('.main-nav');
 const themeCheckbox = document.querySelector('.switch-checkbox');
-const body = document.querySelector('body');
 
 skills.generateList(skillList);
 menu.toggleMenu(nav, burgerButton);
@@ -115,7 +114,7 @@ themeCheckbox.addEventListener('change', () => {
         theme = themeStateEnum.dark;
     }
     localStorage.setItem('theme', theme);
-    body.classList.toggle('dark-theme');
+    document.body.classList.toggle('dark-theme');
 });
 
 if (!theme) {
@@ -123,7 +122,7 @@ if (!theme) {
     theme = themeStateEnum.dark;
 } else if (theme !== themeStateEnum.dark) {
     console.log(theme)
-    body.classList.remove('dark-theme');
+    document.body.classList.remove('dark-theme');
     themeCheckbox.checked = !themeCheckbox.checked;
 }
 // Ложь неприятнее всего, когда она глагол.
