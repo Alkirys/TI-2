@@ -14,28 +14,7 @@ const getComparer = (prop) => {
 
 const skills = {
     inSort: false,
-    data: [
-        {
-            name: 'html',
-            level: 80,
-            icon: 'html.svg',
-        },
-        {
-            name: 'css',
-            level: 70,
-            icon: 'css.svg',
-        },
-        {
-            name: 'python',
-            level: 10,
-            icon: 'python.svg',
-        },
-        {
-            name: 'c++',
-            level: 20,
-            icon: 'c++.svg',
-        },
-    ],
+    data: [],
 
     generateList: function (parentElement) {
         this.data.forEach((skill) => {
@@ -58,14 +37,29 @@ const skills = {
     sortByProp: function (parentElement, propName) {
         parentElement.innerHTML = '';
         if (!this.inSort || this.inSort !== propName) {
-            console.log(`sort by ${propName}`);
             this.data.sort(getComparer(propName));
             this.inSort = propName;
         } else {
             this.data.reverse();
-            console.log(`reverse`);
         }
         this.generateList(parentElement);
+    },
+
+    initList: function (url, parentElement, skillsSection) {
+        // Тестировщик заходит в бар. Заказывает пиво. Заказывает 0 пива. Заказывает 999999 пива.
+        // Заказывает ящерицу. Заказывает -1 пиво. Заказывает двравпорывп.
+        //
+        // Первый реальный посетитель заходит в бар и спрашивает, где туалет. Бар вспыхивает, все гибнут в огне.
+        fetch(url)
+            .then(data => data.json())
+            .then(jsonData => {
+                this.data = jsonData.data;
+                this.generateList(parentElement);
+            })
+            .catch(err => {
+                skillsSection.remove();
+                console.log(err);
+            });
     },
 }
 
@@ -87,8 +81,9 @@ const buttonGroup = document.querySelector('.skills__buttonGroup');
 const burgerButton = document.querySelector('.nav-btn');
 const nav = document.querySelector('.main-nav');
 const themeCheckbox = document.querySelector('.switch-checkbox');
+const skillsSection = document.querySelector('#skills');
 
-skills.generateList(skillList);
+skills.initList('db/skills.json', skillList, skillsSection);
 menu.toggleMenu(nav, burgerButton);
 
 buttonGroup.addEventListener(
@@ -121,7 +116,6 @@ if (!theme) {
     localStorage.setItem('theme', themeStateEnum.dark);
     theme = themeStateEnum.dark;
 } else if (theme !== themeStateEnum.dark) {
-    console.log(theme)
     document.body.classList.remove('dark-theme');
     themeCheckbox.checked = !themeCheckbox.checked;
 }
